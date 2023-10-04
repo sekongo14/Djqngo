@@ -1,4 +1,6 @@
 {% load static %}
+{% load custom %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +12,12 @@
 <body>
     <h1>Bienvenue sur mangalib</h1>
     <p>{{message}}</p>
+
     <p>{{context | length}}</p>
+    <p>{{username | default:"anonyme"}}</p>
+    <p>{% hello username %}</p>
+    {% comment %}
+        <p>{{massage | transform}}</p>
+    {% endcomment %}
 </body>
 </html>
