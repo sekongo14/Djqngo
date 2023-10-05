@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+
+    <h1>{{data.title}}</h1>
+    <ol>
+        <li>
+            Quantite 
+            <ul>
+                <li>{{data.quantite}}</li>
+            </ul>
+        </li>
+
+        <li>
+            Auteur
+            <ul>
+                <li>{{data.auteur.Nom}}</li>
+            </ul>
+        </li>
+
+    </ol>
+
+    <a href="{% url 'index' %}">&laquo; acceuil</a>
+    
+    
+</body>
+</html>

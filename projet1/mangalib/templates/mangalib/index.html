@@ -13,11 +13,18 @@
     <h1>Bienvenue sur mangalib</h1>
     <p>{{message}}</p>
 
+    {% comment %}
     <p>{{context | length}}</p>
     <p>{{username | default:"anonyme"}}</p>
     <p>{% hello username %}</p>
-    {% comment %}
-        <p>{{massage | transform}}</p>
+    <p>{{massage | transform}}</p>
     {% endcomment %}
+
+    {% for data in data %}
+    <li><a href="{% url 'show' data.id %}">{{data.title|upper}}</a></li>
+    {% endfor %}
+    <p><a href="{% url 'add' %}">[+]</a></p>
+    <p><a href="{% url 'edit' %}">[edit]</a></p>
+    <p><a href="{% url 'delete' %}">Delete</a></p>
 </body>
 </html>
