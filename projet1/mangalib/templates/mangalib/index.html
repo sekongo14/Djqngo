@@ -10,6 +10,16 @@
     <link rel="stylesheet" href="{% static 'manga/css/style.css' %}">
 </head>
 <body>
+    {% if user.is_authenticated %}
+        <p>connecter sous {{user.username}} | <a href="{% url 'logout' %}">Deconexion</a></p>
+    {% else %}
+    <p></p><a href="{% url 'login' %}">conexion</a>
+    <a href="{% url 'register' %}">Inscription</a></p>
+    </p>
+    {% endif %}
+
+
+
     <h1>Bienvenue sur mangalib</h1>
     <p>{{message}}</p>
 
@@ -20,11 +30,27 @@
     <p>{{massage | transform}}</p>
     {% endcomment %}
 
-    {% for data in data %}
-    <li><a href="{% url 'show' data.id %}">{{data.title|upper}}</a></li>
-    {% endfor %}
-    <p><a href="{% url 'add' %}">[+]</a></p>
-    <p><a href="{% url 'edit' %}">[edit]</a></p>
-    <p><a href="{% url 'delete' %}">Delete</a></p>
+   
+    <table border="1" style="border-collapse: collapse;">
+        <thead>
+              <th>Titre</th> <th>Auteur</th> <th>Quantite</th> <th>Action</th>   
+        </thead>
+
+        <tbody>
+            {% for data in data %}
+            <tr>
+                <td><a href="{% url 'show' data.id %}">{{data.title|upper}}</a></td>
+                <td>{{data.auteur.Nom|upper}}</td>
+                <td>{{data.quantite}}</td>
+                <td colspan="3">
+                    <form method="post"><a href="{% url 'edit' data.id %}">edit</a></form>
+                    <a href="{% url 'add' %}">ajouter</a>
+                    <a href="{% url 'delete' data.id %}">supprimer</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+   <p></p> 
 </body>
 </html>

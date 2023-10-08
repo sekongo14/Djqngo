@@ -1,7 +1,8 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import render,redirect, get_object_or_404
 from django.http import HttpResponse
 from .models import Livre, Auteur
-
+from .formulaire import LivreForm
+from django import forms
 
 # Create your views here.
 
@@ -20,7 +21,6 @@ def index(request):
         'username': 'sekongo'
                }
     data = Livre.objects.all()
-   
     return render(request, 'mangalib/index.html', {'context': context, 'data': data})
 
 
@@ -31,18 +31,37 @@ def show(request, livre_id):
 
 
 def add(request):
-    auteur = Auteur.objects.get(Nom = "sekongo")
-    livre = Livre.objects.create(title = "coup de pierre", quantite = 24, auteur = auteur)
-    return redirect('index')
+   form = LivreForm()
+   if request.method == 'POST':
+       form = LivreForm(request.POST)
+       if form.is_valid():
+           form.save()
+           return redirect('index')
+   else:
+        form = LivreForm()
+   return render(request, 'mangalib/form.html', {'form': form})       
 
 
-def edit(request):
-    data = Livre.objects.get(title = 'cramer' )
-    data.title = 'craaamer'
-    data.save()
-    return redirect('index')
+def edit(request, livre_id):
+    objet = get_object_or_404(Livre , pk = livre_id)
+    UDP = LivreForm(request.POST, instance= objet)
+    if request.method == 'POST':
+        UPD = LivreForm(request.POST, instance= objet)
+        if UPD.is_valid():
+            UPD.save()
+            return redirect('index')
+    else:
+      UDP = LivreForm(instance= objet)
+    return render(request, 'mangalib/update.html', {'update': UDP})          
+    # data = Livre.objects.get(title = 'cramer' )
+    # data.title = 'craaamer'
+    # data.save()
+    # return redirect('index')
 
-def delete(request):
-    data = Livre.objects.get(title = 'craaamer')
+
+
+
+def delete(request, livre_id):
+    data = Livre.objects.get(id = livre_id)
     data.delete()
     return redirect('index')
