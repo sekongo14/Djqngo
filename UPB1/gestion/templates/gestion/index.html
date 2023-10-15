@@ -1,0 +1,110 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <title>Document</title>
+</head>
+<body>
+    <script src="https://kit.fontawesome.com/f082bb483b.js" crossorigin="anonymous"></script>
+
+
+<div class="container">
+    <div class="container-flex">
+        <div class="logo">
+            <img src="{% static 'images/logo1.png' %}" alt="" width="100px">
+        </div>
+    
+        <nav>
+            <ul>
+                <li><i class="fa-solid fa-house"></i><a href="">acceuil</a></li>
+                <li><a href="">a propos de nous</a></li>
+                <li><i class="fa-solid fa-building-columns"></i><a href="">campus</a></li>
+                <li><a href="">Gouvernance</a></li>
+                <li><i class="fa-solid fa-briefcase"></i><a href="">Traivailler a upb</a></li>
+            </ul>        
+        </nav>
+    </div>
+
+    <div class="connexion">
+        <a href="" class="connect">se connecter</a>
+        <a href="" class="contact">contactez nous</a>
+   </div>
+</div>
+
+<header>
+   <div class="home">
+        <img src="{% static 'images/logo1.png' %}" alt="">
+        <p style="text-transform: uppercase;">former aux science du future</p>
+        <a href="">contactez-nous</a>
+   </div>
+</header>
+
+<section>
+
+    <div class="decouvert">
+
+        <div class="left">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <p>Découvrez notre offre</p>
+            <p style="margin-top: 4px;">Commencez ou poursuivez vos études</p>
+        </div>
+
+        <div class="right">
+            <i class="fa-solid fa-user-tie"></i>
+            <p style="color: black;">Professionnel</p>
+            <p style="margin-top: 4px; color: black;">Vous êtes un professionnel en activité et cherchez à vous former.</p>
+        </div>
+    </div>
+
+</section>
+
+<main>
+    <section class="formation">
+        <h4 style="font-weight: bold; font-size: 40px; margin-top: 15px;">Trouvez la formation qui <br> vous correspond</h4>
+
+        <div class="row">
+
+            <div class="containt">
+                <img src="{% static 'images/assri.jpeg' %}" alt="">
+                <div class="bottom">
+                    <h3 style="text-align: justify; margin: 4%;">ASSRI : Administration et Sécurité des Systèmes des Réseaux Informatique</h3>
+                    <p style="text-align: justify; margin: 4%;">Adaptez ces trois colonnes à vos besoins. Pour dupliquer, supprimer ou déplacer des colonnes,  sélectionnez la colonne et utilisez  les icônes du haut pour effectuer votre action.</p>
+                </div>
+            </div>
+
+
+
+            <div class="containt">
+                <img src="{% static 'images/3ea.jpeg' %}" alt="">
+                <div class="bottom">
+                    <h3 style="text-align: justify; margin: 4%;">3EA : Electronique, Energie Electrique et Automatisme</h3>
+                    <p style="text-align: justify; margin: 4%;">Pour ajouter une quatrième colonne, réduisez la taille de ces trois colonnes à l'aide de l'icône de droite de chaque bloc. Ensuite, dupliquez l'une des colonnes pour en créer une nouvelle en tant que copie..</p>
+                </div>
+            </div>
+
+
+
+            <div class="containt">
+                <img src="{% static 'images/sea.jpeg' %}" alt="">
+                <div class="bottom">
+                    <h3 style="text-align: justify; margin: 4%;">SEA : Statistique et économie appliquée</h3>
+                    <p style="text-align: justify; margin: 4%;">Adaptez ces trois colonnes à vos besoins. Pour  dupliquer, supprimer ou déplacer des colonnes, sélectionnez la colonne et utilisez les icônes du haut pour effectuer votre action.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="baner">
+        <h3 style="font-size: 35px; font-weight: bold; color:rgb(131, 134, 136); text-align: justify;">Première université privée de Côte d'Ivoire qui forme aux </h3>
+        <h3 style="font-size: 35px; font-weight: bold; color:rgb(131, 134, 136);margin-bottom: 5px;">technologies et sciences du futur</h3>
+        <p>L'université polytechnique de bingerville veut former des individus engagés, des acteurs responsables dans les sciences du futures.</p>
+    </section>
+</main>
+
+</body>
+</html>
