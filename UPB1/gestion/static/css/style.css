@@ -1,6 +1,7 @@
 *{
     margin: 0;
     padding: 0;
+    border: solid 1px red;
 }
 
 html{
@@ -189,4 +190,17 @@ main{
     background-color: rgba(218, 218, 193, 0.748);
     width: 100%;
     height: 200px;
+}
+
+.IA{
+    margin-top: 10%; 
+    background-color: #000;
+}
+
+.info{
+
+}
+
+.etudiant_info a{
+    text-decoration: none;
 }
