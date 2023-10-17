@@ -1,7 +1,7 @@
 *{
     margin: 0;
     padding: 0;
-    border: solid 1px red;
+    /* border: solid 1px red; */
 }
 
 html{
@@ -47,6 +47,7 @@ nav ul li{
 nav ul li a{
     text-decoration: none;
     text-transform: uppercase;
+    color: green;
 }
 
 .connexion{
@@ -194,7 +195,7 @@ main{
 
 .IA{
     margin-top: 10%; 
-    background-color: #000;
+    
 }
 
 .info{
@@ -203,4 +204,76 @@ main{
 
 .etudiant_info a{
     text-decoration: none;
+}
+
+.victoire{
+    background-image: url("/static/images/victoire.jpeg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center ;
+    height: 400px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: center;
+}
+
+
+.comment{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    background-color: #fff;
+    width: 320px;
+    padding: 15px;
+}
+
+/* fin main */
+
+/* footer */
+
+footer{
+    background-color: #2f210b;
+    padding: 3%;
+}
+
+.lien{
+    display: flex;
+    justify-content: space-around;
+}
+
+.liens h4{
+    color: #fff;
+    font-size: 20px;
+    margin-bottom: 4%;
+}
+
+.liens  p a{
+    text-decoration: none;
+    padding: 5px;
+    margin-left:10px;
+    color: orange;
+
+}
+
+.liens  p a:hover{
+    color: #fff;
+    transform: scale(0.9);
+}
+.liens p:hover{
+    transform: scale(1.2);
+}
+
+.liens  p i{
+    color: #fff;
+}
+
+.liens  p{
+    margin-bottom: 15px;
+}
+
+.copyright{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 15px;
 }
